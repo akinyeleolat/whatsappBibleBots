@@ -14,17 +14,16 @@ var app = express();
 //app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json())
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.post("/status_callback", function (request, response) {
-  console.log('Request received: status ' + request.payload)
-  console.log(request.body);
+  console.log('Request received: status ');
   response.sendStatus(200);
 });
 
 app.post("/inbound_callback", function (request, response) {
-  console.log('Request received: inbound');
-  console.log(request.body);
+  console.log('Message received: ' + request.body.payload.message.conversation);
   response.sendStatus(200);
 });
 
