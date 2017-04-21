@@ -2,7 +2,9 @@
 // where your node app starts
 
 // init project
-var express = require('express');
+var express = require('express')
+  , bodyParser = require('body-parser');
+
 var app = express();
 
 // we've started you off with Express, 
@@ -11,14 +13,18 @@ var app = express();
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
+app.use(express.bodyParser());
+
 // http://expressjs.com/en/starter/basic-routing.html
 app.post("/status_callback", function (request, response) {
   console.log('Request received: status ' + request.payload)
+  console.log(request.body);
   response.sendStatus(200);
 });
 
 app.post("/inbound_callback", function (request, response) {
-  console.log('Request received: inbound' + JSON.request);
+  console.log('Request received: inbound');
+  console.log(request.body);
   response.sendStatus(200);
 });
 
