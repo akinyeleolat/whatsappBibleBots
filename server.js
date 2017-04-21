@@ -18,7 +18,7 @@ app.post("/status_callback", function (request, response) {
 });
 
 app.post("/inbound_callback", function (request, response) {
-  console.log('Request received: inbound' + request.payload);
+  console.log('Request received: inbound' + JSON.request);
   response.sendStatus(200);
 });
 
