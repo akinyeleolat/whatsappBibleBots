@@ -12,12 +12,12 @@ var app = express();
 app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/status_callback", function (request, response) {
+app.post("/status_callback", function (request, response) {
   console.log('Request received: status ' + request.payload)
   response.sendStatus(200);
 });
 
-app.get("/inbound_callback", function (request, response) {
+app.post("/inbound_callback", function (request, response) {
   console.log('Request received: inbound' + request.payload);
   response.sendStatus(200);
 });
