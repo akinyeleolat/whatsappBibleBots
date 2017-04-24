@@ -27,6 +27,11 @@ app.post("/inbound_callback", function (request, response) {
   response.sendStatus(200);
 });
 
+app.get("/test", function(req, res) {
+  console.log("Hello!");
+  res.sendStatus(200);
+})
+
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
