@@ -21,6 +21,11 @@ app.post("/media_callback", function (request, response) {
   response.sendStatus(200);
 });
 
+app.get("/image", function (request, response) {
+  response.sendFile('/usr/local/wamedia/incoming/photos/WhatsApp/2017-04/IMG-20170428-WA003.jpg');
+});
+
+
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
