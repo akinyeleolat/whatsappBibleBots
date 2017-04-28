@@ -16,6 +16,11 @@ app.post("/inbound_callback", function (request, response) {
   response.sendStatus(200);
 });
 
+app.post("/media_callback", function (request, response) {
+  console.log('Media callback: ' + JSON.stringify(request.body.payload.media));
+  response.sendStatus(200);
+});
+
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
