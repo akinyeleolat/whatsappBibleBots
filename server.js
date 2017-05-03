@@ -12,12 +12,12 @@ app.post("/status_callback", function (request, response) {
 });
 
 app.post("/inbound_callback", function (request, response) {
-  console.log('Message received: ' + request.body.payload.message.conversation);
+  console.log('Message received: ' + JSON.stringify(request.body.payload));
   response.sendStatus(200);
 });
 
 app.post("/media_callback", function (request, response) {
-  console.log('Media callback: ' + JSON.stringify(request.body.payload.media));
+  console.log('Media callback: ' + JSON.stringify(request.body.payload));
   response.sendStatus(200);
 });
 
