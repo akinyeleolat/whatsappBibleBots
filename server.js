@@ -23,7 +23,6 @@ app.post("/media_callback", function (request, response) {
 
 app.post("/docker_email", function (request, response) {
   console.log('Docker email POST: ' + JSON.stringify(request.body));
-  console.log('Docker email POST: ' + JSON.stringify(request.body.payload));
 
   response.sendStatus(200);
 });
