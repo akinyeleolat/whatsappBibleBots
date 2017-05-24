@@ -21,6 +21,18 @@ app.post("/media_callback", function (request, response) {
   response.sendStatus(200);
 });
 
+app.post("/docker_email", function (request, response) {
+  console.log('Docker email POST: ' + JSON.stringify(request.body));
+  console.log('Docker email POST: ' + JSON.stringify(request.body.payload));
+
+  response.sendStatus(200);
+});
+
+app.get("/docker_email", function (request, response) {
+  console.log('Docker email GET: ' + JSON.stringify('OK'));
+  response.send('OK!');
+});
+
 app.get("/image", function (request, response) {
   response.sendFile('/usr/local/wamedia/incoming/photos/WhatsApp/2017-04/IMG-20170428-WA003.jpg');
 });
