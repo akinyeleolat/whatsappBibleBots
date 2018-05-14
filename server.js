@@ -8,7 +8,6 @@ app.use(bodyParser.json())
 
 app.post("/webhook", function (request, response) {
   console.log(request.body);
-  console.log(request.body.messages[0].image);
   response.sendStatus(200);
 });
 app.post("/status_callback", function (request, response) {
