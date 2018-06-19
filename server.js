@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
 app.get("/", function (request, response) {
-  response.send('Simple WhatsApp Webhook tester</br>There is not front-end, see server.js for implementation');
+  response.send('Simple WhatsApp Webhook tester</br>There is no front-end, see server.js for implementation!');
 });
 
 app.post("/webhook", function (request, response) {
