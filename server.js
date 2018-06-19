@@ -11,7 +11,7 @@ app.get("/", function (request, response) {
 });
 
 app.post("/webhook", function (request, response) {
-  console.log('Incoming Request:\n' + JSON.stringify(request.body, null, 2));
+  console.log('Incoming webhook: ' + JSON.stringify(request.body));
   response.sendStatus(200);
 });
 
