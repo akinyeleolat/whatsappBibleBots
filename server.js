@@ -1,6 +1,7 @@
 var express = require('express')
   , bodyParser = require('body-parser');
-var getData = require('get-json);
+
+var getData = require('get-json');
 
 var app = express();
 

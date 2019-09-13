@@ -1,7 +1,7 @@
 {
-  "name": "wa-webhooks-test",
+  "name": "whatsappbiblebots",
   "version": "0.0.1",
-  "description": "This is a boilerplate app used to test WhatsApp webhooks",
+  "description": "serach bible on the go",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -12,15 +12,15 @@
     "get-json": "^2.0.0"
   },
   "engines": {
-    "node": "6.10.x"
+    "node": "6.10.2"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/welcome-project"
   },
   "license": "MIT",
   "keywords": [
-    "node",
-    "glitch",
-    "express"
+    "bible",
+    "chapter",
+    "verse"
   ]
 }
