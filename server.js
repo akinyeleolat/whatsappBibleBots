@@ -1,15 +1,12 @@
-var express = require('express')
-  , bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
+const env = require('dotenv');
+const getData = require('simple-get-json');
 
-// var getJson = require('get-json');
-var axios = require('axios');
+env.config();
 
-var app = express();
+const app = express();
 
-var instance = axios.create({
-  baseURL: 'https://bible-api.com/',
-  timeout: 1000,
-});
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
@@ -18,16 +15,19 @@ app.get("/", function (request, response) {
   response.send('Simple WhatsApp Webhook tester</br>There is no front-end, see server.js for implementation!');
 });
 
-app.get("/search/:query", function (request, response) {
-  console.log(request.params.query)
-//   async function getScripture() {
-//   try {
-//     const response = await instance.get('/user?ID=12345');
-//     response.send(response);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
+app.get("/search/:query",  (req,res) => {
+  const query = req.params.query
+  const getScripture = async (query) =>{
+  try {
+    const url=`https://bible-api.com/${query}`
+    const [response] = await getData([url]);
+  
+    res.send(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+getScripture(query)
 });
 
 app.post("/webhook", function (request, response) {
